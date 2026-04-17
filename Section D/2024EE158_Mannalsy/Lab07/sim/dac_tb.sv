@@ -1,0 +1,105 @@
+`timescale 1ns/1ns
+`define CLK_PERIOD 8
+
+module dac_tb();
+
+    // Generate 125 MHz clock
+    reg clk = 0;
+    always #(`CLK_PERIOD/2) clk = ~clk;
+
+    // I/O
+    reg [2:0] code;
+    wire pwm, next_sample;
+
+    dac #(.CYCLES_PER_WINDOW(8)) DUT (
+        .clk(clk),
+        .code(code),
+        .pwm(pwm),
+        .next_sample(next_sample)
+    );
+
+    initial begin
+        `ifdef IVERILOG
+            $dumpfile("dac_tb.fst");
+            $dumpvars(0, dac_tb);
+        `endif
+        `ifndef IVERILOG
+            $vcdpluson;
+        `endif
+
+        fork
+
+            // ===============================
+            // Thread 1: PWM checking
+            // ===============================
+            begin
+                code = 0;
+                #1;
+                repeat (7) begin
+                    assert(pwm == 0) else $error("pwm should be 0 when code is 0");
+                    @(posedge clk); #1;
+                end
+                assert(pwm == 0) else $error("pwm should be 0 when code is 0");
+
+                code = 7;
+                @(posedge clk); #1;
+                repeat (7) begin
+                    assert(pwm == 1) else $error("pwm should be 1 when code is 7");
+                    @(posedge clk); #1;
+                end
+                assert(pwm == 1) else $error("pwm should be 1 when code is 7");
+
+                repeat (2) begin
+                    code = 3;
+                    repeat (4) begin
+                        @(posedge clk); #1;
+                        assert(pwm == 1) else $error("pwm should be 1 for code = 3");
+                    end
+                    repeat (4) begin
+                        @(posedge clk); #1;
+                        assert(pwm == 0) else $error("pwm should be 0 for code = 3");
+                    end
+                end
+
+                repeat (2) begin
+                    code = 2;
+                    repeat (3) begin
+                        @(posedge clk); #1;
+                        assert(pwm == 1) else $error("pwm should be 1 for code = 2");
+                    end
+                    repeat (5) begin
+                        @(posedge clk); #1;
+                        assert(pwm == 0) else $error("pwm should be 0 for code = 2");
+                    end
+                end
+            end
+
+            // ===============================
+            // Thread 2: next_sample checking
+            // ===============================
+            begin
+                repeat (6) begin
+                    assert(next_sample == 0) else $error("next_sample should start at 0");
+
+                    repeat (7) @(posedge clk); #1;
+
+                    // pulse at reset
+                    assert(next_sample == 1) else $error("next_sample should become 1 at reset");
+
+                    @(posedge clk); #1;
+                    assert(next_sample == 0) else $error("next_sample should go back to 0");
+                end
+            end
+
+        join
+
+        $display("Test finished");
+
+        `ifndef IVERILOG
+            $vcdplusoff;
+        `endif
+
+        $finish();
+    end
+
+endmodule
