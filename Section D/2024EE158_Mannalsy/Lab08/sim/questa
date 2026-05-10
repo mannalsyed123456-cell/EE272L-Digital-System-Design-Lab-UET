@@ -1,0 +1,22 @@
+C:/Users/User/Downloads/lab_8/Src/lab_complete.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/User/Downloads/lab_8/Src/lab_complete.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module synchronizer
+-- Compiling module sample_pulse_gen
+-- Compiling module debouncer
+-- Compiling module edge_detector
+-- Compiling module dac
+-- Compiling module sq_wave_gen
+-- Compiling module top_btn_parser
+-- Compiling module a7top
+
+Top level modules:
+	a7top
+
+} {} {}} {C:/Users/User/Downloads/lab_8/Sim/tb_lab_complete (1).sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Downloads/lab_8/Sim/tb_lab_complete (1).sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module tb_lab_complete
+
+Top level modules:
+	tb_lab_complete
+
+} {} {}}
