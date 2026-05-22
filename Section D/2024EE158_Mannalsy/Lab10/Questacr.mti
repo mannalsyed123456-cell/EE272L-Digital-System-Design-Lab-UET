@@ -1,0 +1,50 @@
+{C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/synchronizer.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/synchronizer.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module synchronizer
+
+Top level modules:
+	synchronizer
+
+} {} {}} {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/edge_detector.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/edge_detector.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module edge_detector
+
+Top level modules:
+	edge_detector
+
+} {} {}} {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/debouncer.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/debouncer.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module debouncer
+
+Top level modules:
+	debouncer
+
+} {} {}} {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/a7top.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/a7top.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module a7top
+
+Top level modules:
+	a7top
+
+} {} {}} {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/thunderbird_fsm.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/thunderbird_fsm.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module thunderbird_fsm
+
+Top level modules:
+	thunderbird_fsm
+
+} {} {}} {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/button_parser.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/button_parser.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module button_parser
+
+Top level modules:
+	button_parser
+
+} {} {}} {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/tb_thunderbird().sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Semester 4 - Copy/Digital Systems Lab/Labs/Lab10/tb_thunderbird().sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module tb_thunderbird
+
+Top level modules:
+	tb_thunderbird
+
+} {} {}}
